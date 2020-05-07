@@ -215,6 +215,10 @@ export default class TextField extends PureComponent {
     if (errorState ^ prevErrorState) {
       this.startFocusAnimation();
     }
+    
+    if(this.props.value!=prevProps.value) {
+      this.setState({text:this.props.value});
+    }
 
     let labelState = labelStateFromProps(this.props, this.state);
     let prevLabelState = labelStateFromProps(prevProps, prevState);
